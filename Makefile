@@ -45,7 +45,7 @@ SRCS	=	ft_isascii.c	\
 			ft_putnbr_fd.c	\
 			ft_strjoin.c	\
 			ft_strnstr.c	\
-			ft_printf.c	
+			ft_printf.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -57,7 +57,7 @@ BONUS	=	ft_lstadd_front.c	\
 			ft_lstdelone.c		\
 			ft_lstiter.c		\
 			ft_lstlast.c		\
-			ft_lstmap.c			
+			ft_lstmap.c
 
 B_OBJS	=	${BONUS:.c=.o}
 
@@ -71,11 +71,18 @@ RM		= rm -f
 
 CFLAGS	= -Wall -Wextra -Werror
 
+#COLORS
+
+COLOUR_GREEN=\033[7;1;32m
+COLOUR_END=\033[0m
+COLOUR_YELLOW=\033[7;1;33m
+
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-			${AR} ${NAME} ${OBJS}
+	@${AR} ${NAME} ${OBJS}
+	@echo "$(COLOUR_GREEN) >>> LIBFT OK <<< $(COLOUR_END)"
 
 bonus:		${OBJS} ${B_OBJS}
 			${AR} ${NAME} ${OBJS} ${B_OBJS}
@@ -83,10 +90,12 @@ bonus:		${OBJS} ${B_OBJS}
 all:		${NAME}
 
 clean:
-			${RM} ${OBJS} ${B_OBJS}
+	@${RM} ${OBJS} ${B_OBJS}
+	@echo "$(COLOUR_YELLOW) >>> OBJS CLEANED <<< $(COLOUR_END)"
 
 fclean:		clean
-			${RM} ${NAME}
+	@${RM} ${NAME}
+	@echo "$(COLOUR_YELLOW) >>> ALL CLEANED <<< $(COLOUR_END)"
 
 re:			fclean all
 
