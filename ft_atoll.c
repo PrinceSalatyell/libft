@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: josanton <josanton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 02:13:01 by josanton          #+#    #+#             */
-/*   Updated: 2022/10/23 17:17:28 by josanton         ###   ########.fr       */
+/*   Updated: 2022/10/23 17:26:32 by josanton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoll(const char *str)
+long long	ft_atoll(const char *str)
 {
 	int			i;
 	long long	num;
-	int			signal;
+	long long	signal;
 
 	i = 0;
 	num = 0;

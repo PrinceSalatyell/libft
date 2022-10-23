@@ -54,7 +54,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 
 int				ft_atoi(const char *str);
 
-int				ft_atoll(const char *str);
+long long		ft_atoll(const char *str);
 
 void			ft_bzero(void *s, size_t n);
 
