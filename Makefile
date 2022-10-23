@@ -17,7 +17,7 @@ SRCS	=	ft_isascii.c	\
 			ft_strlcat.c	\
 			ft_strrchr.c	\
 			ft_atoi.c		\
-			ft_atol.c		\
+			ft_atoll.c		\
 			ft_isdigit.c	\
 			ft_memmove.c	\
 			ft_split.c		\
