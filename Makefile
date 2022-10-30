@@ -21,6 +21,8 @@ SRCS	=	ft_isascii.c	\
 			ft_isdigit.c	\
 			ft_memmove.c	\
 			ft_split.c		\
+			ft_quicksort.c	\
+			ft_swap.c		\
 			ft_strlcpy.c	\
 			ft_strtrim.c	\
 			ft_bzero.c		\
