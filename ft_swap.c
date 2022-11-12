@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josanton <josanton@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: josanton <josanton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:23:52 by josanton          #+#    #+#             */
-/*   Updated: 2022/10/30 01:19:27 by josanton         ###   ########.fr       */
+/*   Updated: 2022/11/11 22:46:51 by josanton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_swap(int *a, int *b)
+void	ft_swap(long long *a, long long *b)
 {
-	int	c;
+	long long	c;
 
 	c = *b;
 	*b = *a;

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_quicksort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josanton <josanton@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: josanton <josanton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:17:58 by josanton          #+#    #+#             */
-/*   Updated: 2022/10/30 16:21:34 by josanton         ###   ########.fr       */
+/*   Updated: 2022/11/11 22:48:59 by josanton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	center_pivot(int *numbers, int len, int pivot, int i)
+static int	center_pivot(long long *numbers, int len, int pivot, int i)
 {
 	while (i < len)
 	{
@@ -39,13 +39,13 @@ static int	center_pivot(int *numbers, int len, int pivot, int i)
 	return (pivot);
 }
 
-static void	helper(int *numbers, int len, int pivot)
+static void	helper(long long *numbers, int len, int pivot)
 {
 	ft_quicksort(numbers, pivot);
 	ft_quicksort(&numbers[pivot + 1], len - pivot - 1);
 }
 
-void	ft_quicksort(int *numbers, int len)
+void	ft_quicksort(long long *numbers, int len)
 {
 	int	i;
 	int	pivot;

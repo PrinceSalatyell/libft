@@ -90,7 +90,7 @@ void			ft_putnbr_fd(int n, int fd);
 
 void			ft_putstr_fd(char *s, int fd);
 
-void			ft_quicksort(int *numbers, int len);
+void			ft_quicksort(long long *numbers, int len);
 
 char			**ft_split(char const *s, char c);
 
@@ -125,7 +125,7 @@ char			*ft_strtrim(char const *s1, char const *set);
 
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 
-void			ft_swap(int *a, int *b);
+void			ft_swap(long long *a, long long *b);
 
 int				ft_tolower(int c);
 
