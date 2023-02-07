@@ -49,7 +49,8 @@ SRCS	=	ft_isascii.c	\
 			ft_putnbr_fd.c	\
 			ft_strjoin.c	\
 			ft_strnstr.c	\
-			ft_printf.c
+			ft_printf.c		\
+			get_next_line.c
 
 OBJS	= ${SRCS:.c=.o}
 

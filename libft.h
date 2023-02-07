@@ -15,6 +15,9 @@
 # define DEC "0123456789"
 # define HEX_U "0123456789ABCDEF"
 # define HEX_L "0123456789abcdef"
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
@@ -132,5 +135,7 @@ int				ft_tolower(int c);
 int				ft_toupper(int c);
 
 int				ft_printf(const char *str, ...);
+
+char			*get_next_line(int fd);
 
 #endif
