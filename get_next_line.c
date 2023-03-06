@@ -57,11 +57,12 @@ static char	*ft_join(char *line, char *save, int size_save, int k)
 
 char	*get_next_line(int fd)
 {
-	static char	save[BUFFER_SIZE];
+	static char	save[BUFFER_SIZE + 1];
 	char		*line;
 	int			bytes_read;
 
-	line = 0;
+	line = NULL;
+	bytes_read = 1;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	while (1)
