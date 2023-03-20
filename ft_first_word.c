@@ -6,7 +6,7 @@
 /*   By: salatiel <salatiel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:21:43 by salatiel          #+#    #+#             */
-/*   Updated: 2023/03/20 18:06:41 by salatiel         ###   ########.fr       */
+/*   Updated: 2023/03/20 18:58:09 by salatiel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ char	*ft_first_word(const char *str)
 	end = start;
 	while (str[end] != 32 && str[end] != 9 && str[end] != 13 && str[end])
 		end++;
-	return (ft_substr(str, start, end - start + 1));
+	return (ft_substr(str, start, end - start));
 }
