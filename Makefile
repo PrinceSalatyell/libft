@@ -50,6 +50,8 @@ SRCS	=	ft_isascii.c	\
 			ft_putnbr_fd.c	\
 			ft_strjoin.c	\
 			ft_strnstr.c	\
+			ft_first_word.c	\
+			ft_last_word.c	\
 			ft_printf.c		\
 			get_next_line.c
 

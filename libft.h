@@ -136,6 +136,10 @@ int				ft_tolower(int c);
 
 int				ft_toupper(int c);
 
+char			*ft_first_word(const char *str);
+
+char			*ft_last_word(const char *str);
+
 int				ft_printf(const char *str, ...);
 
 char			*get_next_line(int fd);
