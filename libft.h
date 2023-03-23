@@ -106,6 +106,9 @@ void			ft_striteri(char *s, void (*f)(unsigned int,
 
 char			*ft_strjoin(char const *s1, char const *s2);
 
+char			*ft_strjoin_sep(char const *s1, char const *s2,
+					char separator);
+
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 
 size_t			ft_strlcpy(char *dst, const char *src, size_t size);
