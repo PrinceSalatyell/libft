@@ -12,69 +12,62 @@
 
 #include "libft.h"
 
-static int	ft_num_of_str(char const *str, char c)
+/*free the memory allocated for ft_split*/
+void	free_split(char **split)
 {
-	int				i;
-	int				index;
+	int		i;
 
-	str = ft_strtrim(str, (char const *)&c);
-	if (!str || *str == 0)
-	{
-		free ((void *)str);
-		return (0);
-	}
-	i = 1;
-	index = 0;
-	while (str[index])
-	{
-		if (str[index] == c)
-		{
-			i++;
-			while (str[index] == c)
-				index++;
-		}
-		else
-			index++;
-	}
-	free((void *)str);
-	return (i);
+	if (!split)
+		return ;
+	i = -1;
+	while (split[++i])
+		free(split[i]);
+	free(split[i]);
+	free(split);
 }
 
-static int	ft_size_of_single_str(char const *str, char c)
+static size_t	count_words(char const *s, char c)
 {
-	int	i;
+	size_t	words;
 
-	i = 0;
-	while (str[i] != c && str[i])
-		i++;
-	return (i);
+	words = 0;
+	while (*s)
+	{
+		while (*s == c && *s != '\0')
+			s++;
+		if (*s != '\0')
+			words ++;
+		while (*s != c && *s != '\0')
+			s ++;
+	}
+	return (words);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char		**res;
-	int			i;
-	int			j;
-	int			size;
-	int			x;
+	char	**new;
+	int		i;
+	size_t	len;
 
 	if (!s)
-		return (0);
-	j = 0;
-	i = 0;
-	x = ft_num_of_str(s, c) + 1;
-	res = malloc(sizeof(char *) * (x));
-	if (!res)
 		return (NULL);
-	while (j < x - 1)
+	new = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (new == NULL)
+		return (NULL);
+	i = 0;
+	while (*s)
 	{
-		while (s[i] == c && s[i])
-			i++;
-		size = ft_size_of_single_str(s + i, c);
-		res[j] = ft_substr((char *)s, i, size);
-		i += size;
-		j++;
+		while (*s == c && *s != '\0')
+			s++;
+		if (*s == '\0')
+			break ;
+		if (!ft_strchr(s, c))
+			len = ft_strlen(s);
+		else
+			len = (size_t)ft_strchr(s, c) - (size_t)s;
+		new[i++] = ft_substr(s, 0, len);
+		s = s + len;
 	}
-	res[j] = NULL;
-	return (res);
+	new[i] = NULL;
+	return (new);
 }
